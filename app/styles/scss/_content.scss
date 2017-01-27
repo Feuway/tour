@@ -1,0 +1,34 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f2f2f2;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    width: $w-mobile;
+
+    @media($w-tablet) {
+      width: 660px;
+    }
+
+    @media($w-desktop) {
+      width: 960px;
+    }
+  }
+
+  &__title {
+    align-self: center;
+    font-size: 18px;
+
+    @media($w-tablet) {
+      align-self: auto;
+      margin: 34px 0 34px 20px;
+      font-size: 21px;
+    }
+
+    @media($w-desktop) {
+    }
+  }
+}

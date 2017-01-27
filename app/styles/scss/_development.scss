@@ -1,0 +1,7 @@
+.development {
+  color: #828285;
+  
+  @media($w-desktop) {
+    align-self: flex-end;
+  }
+}

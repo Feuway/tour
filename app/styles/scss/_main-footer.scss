@@ -1,0 +1,23 @@
+.main-footer {
+  display: flex;
+  justify-content: center;
+
+  @media($w-tablet) {
+    padding: 40px 0;
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+
+    @media($w-tablet) {
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-flow: wrap row;
+    }
+
+    @media($w-desktop) {
+      width: 100%;
+    }
+  }
+}

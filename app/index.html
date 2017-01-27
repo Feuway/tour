@@ -10,9 +10,6 @@
         <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
 
-        <!-- Web Application Manifest -->
-        <link rel="manifest" href="manifest.json">
-
         <!-- Add to homescreen for Chrome on Android -->
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="application-name" content="Web Starter Kit">
@@ -31,29 +28,236 @@
         <!-- Color the status bar on mobile devices -->
         <meta name="theme-color" content="#2F3BA2">
 
-        <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-        <!--
-        <link rel="canonical" href="http://www.example.com/">
-        -->
+        <link rel="stylesheet" href="styles/scss/main.css">
+        <link href="styles/datepicker.min.css" rel="stylesheet" type="text/css">
+        <link href="styles/select2.css" rel="stylesheet" type="text/css">
+
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/datepicker.min.js"></script>
+        <script src="scripts/select2.min.js"></script>
     </head>
     <body>
-        <!-- Add your site or app content here -->
+
+        <header class="main-header">
+            <div class="wrap">
+                <a class="site-logo" href="index.html"></a>
+                <nav class="main-nav">
+                    <ul class="main-nav__list">
+                        <li><a href="#" class="main-nav__list-item">Моя лента</a></li>
+                        <li><a href="#" class="main-nav__list-item  main-nav__list-item--active">Интересы</a></li>
+                        <li><a href="#" class="main-nav__list-item">Направления</a></li>
+                        <li><a href="#" class="main-nav__list-item">Подбор тура</a></li>
+                        <li><a href="#" class="main-nav__list-item">Заявка</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="content">
+            <div class="content__wrap">
+                <h1 class="content__title">Настройки интересов</h1>
+                <article class="picking">
+                    <section class="picking__tabs">
+                        <div class="picking__tabs-item  picking__tabs-item--active">Подборка</div>
+                        <button class="picking__tabs-add">Добавить подборку</button>
+                    </section>
+                    <section class="picking__filter">
+                        <div class="picking__filter-item  picking__filter-item--picking">
+                            <label class="picking__label" for="picking">Название подборки</label>
+                            <div class="picking__wrap-set">
+                                <input type="text" id="picking">
+                            </div>
+                        </div>
+                        <div class="picking__filter-item  picking__filter-item--city">
+                            <label class="picking__label" for="">Ваш город</label>
+                            <div class="picking__wrap-set">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="picking__filter-item  picking__filter-item--location">
+                            <h3 class="picking__label">Вы можете задать несколько стран или регионов для одной подборки</h3>
+                            <div class="picking__region">
+                                <h2 class="picking__region-title">Юго-Восточная Азия</h2>
+                                <div class="country">
+                                    <img class="country__flag" src="images/tailand.png">
+                                    <p class="country__text">Таиланд</p>
+                                    <button class="country__delete"></button>
+                                </div>
+                                <div class="country">
+                                    <img class="country__flag">
+                                    <p class="country__text">Вьетнам</p>
+                                    <button class="country__delete"></button>
+                                </div>
+                                <div class="country">
+                                    <img class="country__flag">
+                                    <p class="country__text">Индонезия</p>
+                                    <button class="country__delete"></button>
+                                </div>
+                            </div>
+                            <div class="picking__location-buttons">
+                                <button class="picking__add picking__add--region">Добавить регион</button>
+                                <button class="picking__add picking__add--country">Добавить страны</button>
+                            </div>
+                        </div>
+                        <div class="picking__setting">
+                            <div class="picking__filter-item  picking__setting-item  picking__setting-item--date">
+                                <h3 class="picking__label">Дата вылета</h3>
+                                <div class="picking__wrap-set  picking__wrap-set--setting">
+                                    <input type="text"
+                                           class="datepicker-here"
+                                           data-multiple-dates="2"
+                                           data-multiple-dates-separator=" - "
+                                           data-date-format="dd MM, DD" />
+                                </div>
+                            </div>
+                            <div class="picking__filter-item  picking__setting-item  picking__setting-item--time">
+                                <h3 class="picking__label">На сколько</h3>
+                                <div class="picking__wrap-set  picking__wrap-set--setting">
+                                    <select>
+                                        <option>0 - 7 ночей</option>
+                                        <option>7 - 14 ночей</option>
+                                        <option>14 - 21 ночь</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="picking__filter-item  picking__setting-item  picking__setting-item--guests">
+                                <h3 class="picking__label">Количество гостей</h3>
+                                <div class="picking__wrap-set  picking__wrap-set--setting">
+                                    <select>
+                                        <option>1 взрослый</option>
+                                        <option>1 взрослый, 1 детский</option>
+                                        <option>1 взрослый, 2 детских</option>
+                                        <option>2 взрослых, 2 детских</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="picking__filter-item  picking__setting-item  picking__setting-item--cost">
+                                <h3 class="picking__label">Стоимость тура</h3>
+                                <div class="picking__wrap-set  picking__wrap-set--setting">
+                                    <select>
+                                        <option>0 P - 50 000 P</option>
+                                        <option>50 00 P - 150 000 P</option>
+                                        <option>150 000 P - 250 000 P</option>
+                                        <option>250 000 P - 350 000 P</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="picking__filter-item  picking__setting-item  picking__setting-item--category">
+                                <h3 class="picking__label">Категория отелей от</h3>
+                                <div class="picking__wrap-set  picking__wrap-set--setting">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="picking__filter-item  picking__setting-item  picking__setting-item--rating">
+                                <h3 class="picking__label">Рейтинг TopHotels</h3>
+                                <div class="picking__wrap-set  picking__wrap-set--setting">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="picking__filter-item  picking__setting-item  picking__setting-item--food">
+                                <h3 class="picking__label">Тип питания</h3>
+                                <div class="picking__wrap-set  picking__wrap-set--setting">
+                                    <select>
+                                        <option>Любой</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="picking__filter-item  picking__setting-item  picking__setting-item--location">
+                                <h3 class="picking__label">Расположение</h3>
+                                <div class="picking__wrap-set  picking__wrap-set--setting">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <button class="picking__delete-picking">Удалить подборку</button>
+                        </div>
+                        <button class="picking__watch-results">Смотреть результаты</button>
+
+                    </section>
+                </article>
+            </div>
+        </main>
+        <footer class="main-footer">
+            <div class="wrap">
+                <div class="wrap__footer">
+                    <h2 class="section-footer__title">Туристический проект</h2>
+                    <section class="main-footer__sections">
+                        <div class="section-footer">
+                            <p class="section-footer__text">Москва, 1-й Щипковский переулок, д.1</p>
+                            <a class="section-footer__text  show" href="#">Показать на карте</a>
+                        </div>
+                        <div class="section-footer">
+                            <p class="section-footer__text">Время работы офиса:</p>
+                            <p class="section-footer__text">Будни 10:00 - 21:00</p>
+                            <p class="section-footer__text">Выходные и праздники 11:00 - 17:00</p>
+                        </div>
+                        <div class="section-footer">
+                            <p class="section-footer__text">+7 495 585 55 55</p>
+                            <a class="section-footer__text  show" href="#">Обратная свзяь</a>
+                        </div>
+                        <div class="section-footer">
+                            <a class="section-footer__text section-footer__social" href="#">
+                                <svg x="0px" y="0px" width="14px"
+	 height="14px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="e6c6b53d3c8160b22dad35a0f710525a"><path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M509.365,393.284c-5.913,6.651-21.665,8.124-21.665,8.124
+		h-83.951c0,0-11.737,2.74-32.498-18.957c-14.263-14.907-28.922-36.897-40.621-46.038c-6.977-5.45-13.541-2.708-13.541-2.708
+		s-12.25,0.587-13.541,13.541c-2.269,22.752-5.416,35.205-5.416,35.205s-1.494,9.619-5.416,13.541
+		c-4.191,4.191-10.832,5.416-10.832,5.416S166.019,427.526,76.066,282.251C11.151,177.407,2.947,146.846,2.947,146.846
+		s-5.506-7.407,0-16.249c5.813-9.334,13.541-8.124,13.541-8.124h75.827c0,0,8.384,0.903,13.541,5.416
+		c5.652,4.945,8.125,13.541,8.125,13.541s16.622,40.193,35.206,70.411c25.68,41.754,37.914,37.914,37.914,37.914
+		s22.175-6.17,8.124-100.201c-1.944-13.008-27.081-16.249-27.081-16.249s-0.233-11.228,5.416-16.249
+		c6.479-5.761,13.541-5.416,13.541-5.416s11.245-1.964,51.454-2.708c20.326-0.375,35.205,0,35.205,0s9.894-0.329,21.665,8.125
+		c5.696,4.09,5.416,13.541,5.416,13.541s-2.388,67.862,0,102.909c1.029,15.074,8.125,16.249,8.125,16.249s7.622,5.902,37.913-37.914
+		c19.169-27.727,35.206-67.703,35.206-67.703s3.97-11.401,8.124-16.249c3.965-4.625,10.833-5.416,10.833-5.416h97.492
+		c0,0,6.011-0.221,8.124,5.416c1.941,5.176,0,16.249,0,16.249s-1.065,12.264-10.832,27.082
+		c-23.062,34.989-67.703,92.075-67.703,92.075s-3.351,7.752-2.708,13.541c0.708,6.371,5.416,10.832,5.416,10.832
+		s33.647,30.445,56.87,56.871c12.547,14.278,21.665,32.497,21.665,32.497S514.168,387.881,509.365,393.284z"></path></g></svg>
+                                Вконтакте</a>
+                            <a class="section-footer__text section-footer__social" href="#">
+                                <svg x="0px" y="0px" width="12px"
+	 height="12px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g id="7935ec95c421cee6d86eb22ecd11b7e3"><path style="display: inline;" d="M283.122,122.174c0,5.24,0,22.319,0,46.583h83.424l-9.045,74.367h-74.379
+		c0,114.688,0,268.375,0,268.375h-98.726c0,0,0-151.653,0-268.375h-51.443v-74.367h51.443c0-29.492,0-50.463,0-56.302
+		c0-27.82-2.096-41.02,9.725-62.578C205.948,28.32,239.308-0.174,297.007,0.512c57.713,0.711,82.04,6.263,82.04,6.263
+		l-12.501,79.257c0,0-36.853-9.731-54.942-6.263C293.539,83.238,283.122,94.366,283.122,122.174z"></path></g></svg>
+                                Facebook</a>
+
+                            <a class="section-footer__text section-footer__social" href="#">
+                                <svg x="0px" y="0px" width="12px"
+	 height="12px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                    <g id="5151e0c8492e5103c096af88a50059a5">
+                                        <path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M66.084,0.5h379.819c36.079,0,65.597,29.505,65.597,65.584
+		v379.819c0,36.079-29.518,65.597-65.597,65.597H66.084C30.005,511.5,0.5,481.982,0.5,445.903V66.084
+		C0.5,30.005,30.005,0.5,66.084,0.5L66.084,0.5z M372.734,57.264c-12.65,0-23.005,10.355-23.005,23.005v55.067
+		c0,12.65,10.354,23.005,23.005,23.005h57.762c12.65,0,23.005-10.354,23.005-23.005V80.269c0-12.65-10.354-23.005-23.005-23.005
+		H372.734L372.734,57.264z M453.738,216.59h-44.975c4.254,13.897,6.55,28.606,6.55,43.852c0,84.996-71.111,153.898-158.839,153.898
+		c-87.716,0-158.827-68.902-158.827-153.898c0-15.245,2.295-29.954,6.55-43.852H57.276v215.853c0,11.178,9.132,20.322,20.311,20.322
+		h355.841c11.166,0,20.311-9.145,20.311-20.322V216.59L453.738,216.59z M256.475,155.447c-56.677,0-102.625,44.525-102.625,99.443
+		s45.948,99.443,102.625,99.443c56.688,0,102.636-44.525,102.636-99.443S313.163,155.447,256.475,155.447z"></path></g></svg>
+                                Instagram</a>
+                            <a class="section-footer__text section-footer__social" href="#">
+                                <svg x="0px" y="0px" width="12px"
+	 height="12px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g id="7935ec95c421cee6d86eb22ecd128789"><path style="display: inline;" d="M256.018,259.156c71.423,0,129.31-57.899,129.31-129.334C385.327,58.387,327.44,0.5,256.018,0.5
+		c-71.448,0-129.359,57.887-129.359,129.322C126.658,201.257,184.57,259.156,256.018,259.156z M256.018,66.196
+		c35.131,0,63.612,28.482,63.612,63.625c0,35.144-28.481,63.625-63.612,63.625c-35.168,0-63.638-28.481-63.638-63.625
+		C192.38,94.678,220.849,66.196,256.018,66.196z M405.075,274.938c-7.285-14.671-27.508-26.872-54.394-5.701
+		c-36.341,28.619-94.664,28.619-94.664,28.619s-58.361,0-94.702-28.619c-26.873-21.171-47.083-8.97-54.381,5.701
+		c-12.75,25.563,1.634,37.926,34.096,58.761c27.721,17.803,65.821,24.452,90.411,26.935l-20.535,20.535
+		c-28.918,28.905-56.826,56.838-76.201,76.213c-11.59,11.577-11.59,30.354,0,41.931l3.48,3.506c11.59,11.577,30.354,11.577,41.943,0
+		l76.201-76.214c28.943,28.919,56.851,56.839,76.225,76.214c11.59,11.577,30.354,11.577,41.943,0l3.48-3.506
+		c11.59-11.59,11.59-30.354,0-41.943l-76.201-76.2l-20.584-20.598c24.614-2.545,62.29-9.22,89.786-26.872
+		C403.441,312.863,417.801,300.5,405.075,274.938z"></path></g></svg>
+                                Одноклассники</a>
+                        </div>
+                    </section>
+                    <div class="development">
+                        <p class="development__text">Разработано командой TourAdmin &#169; 2017</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 
-
-        <!-- build:js scripts/main.min.js -->
         <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-          ga('create', 'UA-XXXXX-X', 'auto');
-          ga('send', 'pageview');
-        </script>
-        <!-- Built with love using Web Starter Kit -->
     </body>
 </html>

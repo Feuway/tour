@@ -1,0 +1,40 @@
+.section-footer {
+  font-size: 12px;
+  margin-bottom: 20px;
+
+  @media($w-tablet) {
+    width: 300px;
+    font-size: 15px;
+  }
+
+  @media($w-desktop) {
+    width: auto;
+  }
+
+  &__title {
+    font-size: 12px;
+    text-transform: uppercase;
+
+    @media($w-tablet) {
+      align-self: flex-start;
+      font-size: 15px;
+      color: #000000;
+    }
+  }
+
+  &__text {
+    margin: 5px 0;
+    color: #828285;
+  }
+
+  &__social {
+    display: block;
+    text-decoration: none;
+    transition: color .2s, fill .2s linear;
+
+    &:hover {
+      color: #ff8e41;
+      fill: #ff8e41;
+    }
+  }
+}
