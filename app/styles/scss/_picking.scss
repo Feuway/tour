@@ -56,10 +56,6 @@
       padding: 0 20px;
     }
 
-    @media($w-desktop) {
-
-    }
-
     &-item {
       display: flex;
       flex-direction: column;
@@ -67,10 +63,6 @@
 
       @media($w-tablet) {
         margin-right: 30px;
-      }
-
-      @media($w-desktop) {
-
       }
 
       h3 {
@@ -107,10 +99,6 @@
     @media($w-tablet) {
       font-size: 12px;
     }
-
-    @media($w-desktop) {
-
-    }
   }
 
   &__wrap-set {
@@ -130,12 +118,15 @@
       }
     }
 
-    @media($w-desktop) {
-      &--setting {
+    @media($w-tablet) {
+      font-size: 14px;
+    }
+
+    &--setting {
+      @media($w-desktop) {
         border-right: none;
       }
     }
-
   }
 
   &__region {
@@ -163,10 +154,6 @@
     display: flex;
     justify-content: flex-start;
     margin-left: 20px;
-
-    @media($w-tablet) {
-
-    }
   }
 
   &__add {
@@ -264,15 +251,6 @@
         }
       }
     }
-
-    &-item {
-      @media($w-tablet) {
-
-      }
-
-
-    }
-
   }
 
   &__watch-results {
